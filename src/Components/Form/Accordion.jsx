@@ -4,7 +4,7 @@ const Accordion = () => {
   return (
     <div>
         <button>
-            <span>Personal Details and mango</span>
+            <span>Personal Details +</span>
             <span>+</span>
 
         </button>
