@@ -1,8 +1,8 @@
 import Accordion from "./Components/Form/Accordion";
-import Personal from "./Components/Form/Personal";
+import { Button } from "./Components/ui/button";
 function Form() {
   return (
-    <Accordion></Accordion>
+    <Button>king of the workld</Button>
   );
 }
 
