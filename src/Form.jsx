@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FormHeading } from "./Components/FormHeading";
+import PersonalForm from "./Components/PersonalForm";
 function Form() {
   return (
     <div className="flex flex-col gap-6">
@@ -17,9 +18,9 @@ function Form() {
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger>Personal Information</AccordionTrigger>
+          <AccordionTrigger className='text-xl'>Personal Information</AccordionTrigger>
           <AccordionContent>
-            Yes, it adheres to accessibility best practices.
+            <PersonalForm></PersonalForm>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

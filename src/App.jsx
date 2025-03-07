@@ -3,7 +3,7 @@ import { Resume } from "./Resume";
 
 export default function App() {
   return (
-    <div className="flex w-full h-screen bg-slate-800">
+    <div className="flex w-full h-screen bg-gray-950">
       <div className="w-1/3 border-2 p-4">
         <Form/>
       </div>
