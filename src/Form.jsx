@@ -18,10 +18,16 @@ function Form() {
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger className='text-xl'>Personal Information</AccordionTrigger>
+          <AccordionTrigger className="text-xl">
+            Personal Information
+          </AccordionTrigger>
           <AccordionContent>
             <PersonalForm></PersonalForm>
           </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value = 'item-2'>
+          <AccordionTrigger className={'text-xl'}>Education</AccordionTrigger>
+          <AccordionContent>Edfdfj dfdfdj dfdfj</AccordionContent>
         </AccordionItem>
       </Accordion>
     </div>
