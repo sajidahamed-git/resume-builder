@@ -1,3 +1,3 @@
 # React + Vite + TailwindCSS with Shadcn
 
-Live Preview: 
+Live Preview: https://resume-builder-ddn.pages.dev/
