@@ -23,7 +23,7 @@ function PersonalForm() {
   //   };
 
   return (
-    <form className="flex flex-col space-y-4">
+    <form className="flex flex-col">
       <div className="flex flex-col">
         <label
           htmlFor="firstName"
@@ -42,7 +42,7 @@ function PersonalForm() {
         />
       </div>
       <div className="flex flex-col">
-        <label htmlFor="lastName" className="text-sm font-medium text-black">
+        <label htmlFor="lastName" className="m-1 text-sm font-medium text-black">
           Last Name
         </label>
         <input
@@ -56,7 +56,7 @@ function PersonalForm() {
         />
       </div>
       <div className="flex flex-col">
-        <label htmlFor="email" className="text-sm font-medium text-black">
+        <label htmlFor="email" className="m-1text-sm font-medium text-black">
           Email
         </label>
         <input
@@ -70,7 +70,7 @@ function PersonalForm() {
         />
       </div>
       <div className="flex flex-col">
-        <label htmlFor="phone" className="text-sm font-medium text-black">
+        <label htmlFor="phone" className="m-1 mxtext-sm font-medium text-black">
           Phone Number
         </label>
         <input

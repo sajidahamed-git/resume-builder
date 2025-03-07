@@ -6,6 +6,7 @@ import {
 } from "@/Components/ui/accordion";
 import { FormHeading } from "./Components/FormHeading";
 import PersonalForm from "./Components/PersonalForm";
+import EducationForm from "./Components/EducationForm";
 function Form() {
   return (
     <div className="flex flex-col gap-6">
@@ -27,7 +28,9 @@ function Form() {
         </AccordionItem>
         <AccordionItem value = 'item-2'>
           <AccordionTrigger className={'text-xl'}>Education</AccordionTrigger>
-          <AccordionContent>Edfdfj dfdfdj dfdfj</AccordionContent>
+          <AccordionContent>
+            <EducationForm></EducationForm>
+          </AccordionContent>
         </AccordionItem>
       </Accordion>
     </div>
