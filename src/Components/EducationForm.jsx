@@ -6,7 +6,7 @@ function EducationForm() {
           htmlFor="firstName"
           className="m-1 text-sm font-medium text-black"
         >
-          School Name
+        University
         </label>
         <input
           type="text"

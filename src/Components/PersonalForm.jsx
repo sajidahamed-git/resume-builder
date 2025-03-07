@@ -29,7 +29,7 @@ function PersonalForm() {
           htmlFor="firstName"
           className="m-1 text-sm font-medium text-black"
         >
-          First Name
+          Full Name
         </label>
         <input
           type="text"
@@ -41,22 +41,9 @@ function PersonalForm() {
           required
         />
       </div>
+      
       <div className="flex flex-col">
-        <label htmlFor="lastName" className="m-1 text-sm font-medium text-black">
-          Last Name
-        </label>
-        <input
-          type="text"
-          id="lastName"
-          name="lastName"
-          //   value={formData.lastName}
-          //   onChange={handleChange}
-          className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
-          required
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="email" className="m-1text-sm font-medium text-black">
+        <label htmlFor="email" className="m-1 text-sm font-medium text-black">
           Email
         </label>
         <input
@@ -69,6 +56,7 @@ function PersonalForm() {
           required
         />
       </div>
+      
       <div className="flex flex-col">
         <label htmlFor="phone" className="m-1 mxtext-sm font-medium text-black">
           Phone Number
@@ -80,6 +68,20 @@ function PersonalForm() {
           //   value={formData.phone}
           //   onChange={handleChange}
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label htmlFor="lastName" className="m-1 text-sm font-medium text-black">
+        Location
+        </label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          //   value={formData.lastName}
+          //   onChange={handleChange}
+          className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          required
         />
       </div>
       <div>
