@@ -14,6 +14,7 @@ function Form() {
         type="single"
         collapsible
         className="w-full rounded-2xl bg-gray-500 px-4 py-1 text-black"
+        defaultValue="item-1"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>Personal Information</AccordionTrigger>
