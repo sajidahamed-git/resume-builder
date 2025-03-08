@@ -1,11 +1,11 @@
 import React from "react";
 
-export const Resume = () => {
+export const Resume = ({formData}) => {
   return (
     <div className="container mx-auto p-4">
       {/* Personal Details Section */}
       <section className="mb-6 w-full bg-blue-400 py-8 text-center rounded-lg shadow-md">
-        <h2 className="mb-2 text-2xl font-bold text-white">Full Name</h2>
+        <h2 className="mb-2 text-2xl font-bold text-white">{formData.firstName}</h2>
         <div className="flex justify-around text-white">
           <div>Email</div>
           <div>Phone</div>

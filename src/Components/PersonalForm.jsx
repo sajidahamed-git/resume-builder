@@ -1,26 +1,8 @@
-import { CctvIcon } from "lucide-react";
-import React, { useState } from "react";
-const initialValue = {
-  firstName: "",
-  email: "",
-  phone: "",
-  location: "",
-};
-function PersonalForm() {
-  const [formData,setFormData] = useState(initialValue);
 
-  const updateResume = (e) => {
-    const {name,value} = e.target
-    // console.log(e.target)
-    // console.log(name,value)
-    const updatedFormData = {
-      ...formData,
-      [name]: value
-    };
-    setFormData(updatedFormData);
-    // console.log(updatedFormData);
+function PersonalForm({formData,updateResume}) {
 
-  };
+
+
   return (
     <form className="flex flex-col">
       <div className="flex flex-col">

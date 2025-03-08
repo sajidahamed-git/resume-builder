@@ -8,7 +8,7 @@ import { FormHeading } from "./Components/FormHeading";
 import PersonalForm from "./Components/PersonalForm";
 import EducationForm from "./Components/EducationForm";
 import ExperienceForm from "./Components/ExperienceForm";
-function Form() {
+function Form({formData,updateResume}) {
   return (
     <div className="flex flex-col gap-6">
       <FormHeading></FormHeading>
@@ -24,7 +24,7 @@ function Form() {
             Personal Information
           </AccordionTrigger>
           <AccordionContent>
-            <PersonalForm></PersonalForm>
+            <PersonalForm formData={formData} updateResume={updateResume}></PersonalForm>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value = 'item-2'>
