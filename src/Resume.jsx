@@ -17,7 +17,7 @@ export const Resume = () => {
       <section className="mb-6 text-center">
         <h2 className="mb-2 bg-blue-300 text-2xl font-bold py-2 rounded-lg shadow-md">Education</h2>
         <div className="flex justify-center">
-          <div className="w-2/3 p-2 text-left">
+          <div className="w-2/3 p-2 text-left">   
             <p>
               <strong>University:</strong> XYZ University
             </p>
