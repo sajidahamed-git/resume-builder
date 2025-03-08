@@ -1,23 +1,36 @@
 import React from "react";
+import { EnvelopeClosedIcon,DrawingPinFilledIcon } from "@radix-ui/react-icons";
 
-export const Resume = ({formData}) => {
+export const Resume = ({ formData }) => {
   return (
     <div className="container mx-auto p-4">
       {/* Personal Details Section */}
-      <section className="mb-6 w-full bg-blue-400 py-8 text-center rounded-lg shadow-md">
-        <h2 className="mb-2 text-2xl font-bold text-white">{formData.firstName}</h2>
+      <section className="mb-6 w-full rounded-lg bg-blue-400 py-8 text-center shadow-md">
+        <h2 className="mb-2 text-2xl font-bold text-white">
+          {formData.firstName}
+        </h2>
         <div className="flex justify-around text-white">
-          <div>Email</div>
-          <div>Phone</div>
-          <div>Location</div>
+          <div className="flex items-center">
+            <EnvelopeClosedIcon className="mr-2" />
+            <div>{formData.email}</div>
+          </div>
+          <div>{formData.phone}</div>
+          <div>
+            <div className="flex items-center">
+              <DrawingPinFilledIcon className="mr-2"></DrawingPinFilledIcon>
+              <div>{formData.location}</div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Education Section */}
       <section className="mb-6 text-center">
-        <h2 className="mb-2 bg-blue-300 text-2xl font-bold py-2 rounded-lg shadow-md">Education</h2>
+        <h2 className="mb-2 rounded-lg bg-blue-300 py-2 text-2xl font-bold shadow-md">
+          Education
+        </h2>
         <div className="flex justify-center">
-          <div className="w-2/3 p-2 text-left">   
+          <div className="w-2/3 p-2 text-left">
             <p>
               <strong>University:</strong> XYZ University
             </p>
@@ -34,7 +47,9 @@ export const Resume = ({formData}) => {
 
       {/* Experience Section */}
       <section className="text-center">
-        <h2 className="mb-2 bg-blue-300 text-2xl font-bold py-2 rounded-lg shadow-md">Experience</h2>
+        <h2 className="mb-2 rounded-lg bg-blue-300 py-2 text-2xl font-bold shadow-md">
+          Experience
+        </h2>
         <div className="flex justify-center">
           <div className="w-2/3 p-2 text-left">
             <p>

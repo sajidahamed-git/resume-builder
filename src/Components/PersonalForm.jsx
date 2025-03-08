@@ -53,19 +53,19 @@ function PersonalForm({formData,updateResume}) {
       </div>
       <div className="flex flex-col">
         <label
-          htmlFor="lastName"
+          htmlFor="location"
           className="m-1 text-sm font-medium text-black"
         >
           Location
         </label>
         <input
           type="text"
-          id="lastName"
-          name="lastName"
-            value={formData.lastName}
+          id="location"
+          name="location"
+            value={formData.location}
             onChange={updateResume}
           className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
-          required
+          
         />
       </div>
       <div>
