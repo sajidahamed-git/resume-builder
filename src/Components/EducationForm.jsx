@@ -1,4 +1,4 @@
-function EducationForm() {
+function EducationForm({ formData, updateResume }) {
   return (
     <form className="flex flex-col">
       <div className="flex flex-col">
@@ -10,10 +10,10 @@ function EducationForm() {
         </label>
         <input
           type="text"
-          id="firstName"
-          name="firstName"
-          //   value={formData.firstName}
-          //   onChange={handleChange}
+          id="university"
+          name="education.university"
+          value={formData.education.firstName}
+          onChange={updateResume}
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
           required
         />
@@ -27,10 +27,12 @@ function EducationForm() {
         </label>
         <input
           type="text"
-          id="lastName"
-          name="lastName"
+          id="degree"
+          name="education.degree"
           //   value={formData.lastName}
           //   onChange={handleChange}
+          value={formData.education.degree}
+          onChange={updateResume}
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
           required
         />

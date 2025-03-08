@@ -30,13 +30,13 @@ function Form({formData,updateResume}) {
         <AccordionItem value = 'item-2'>
           <AccordionTrigger className={'text-xl'}>Education</AccordionTrigger>
           <AccordionContent>
-            <EducationForm></EducationForm>
+            <EducationForm formData={formData} updateResume={updateResume}></EducationForm>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value = 'item-3'>
           <AccordionTrigger className={'text-xl'}>Experience</AccordionTrigger>
           <AccordionContent>
-            <ExperienceForm></ExperienceForm>
+            <ExperienceForm formData={formData} updateResume={updateResume}></ExperienceForm>
           </AccordionContent>
 
         </AccordionItem>

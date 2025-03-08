@@ -1,22 +1,17 @@
+import React from "react";
 
-function PersonalForm({formData,updateResume}) {
-
-
-
+function PersonalForm({ formData, updateResume }) {
   return (
     <form className="flex flex-col">
       <div className="flex flex-col">
-        <label
-          htmlFor="firstName"
-          className="m-1 text-sm font-medium text-black"
-        >
+        <label htmlFor="firstName" className="m-1 text-sm font-medium text-black">
           Full Name
         </label>
         <input
           type="text"
           id="firstName"
-          name="firstName"
-          value={formData.firstName}
+          name="personal.firstName"
+          value={formData.personal.firstName}
           onChange={updateResume}
           className="m-1 p-2 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
           required
@@ -30,51 +25,41 @@ function PersonalForm({formData,updateResume}) {
         <input
           type="email"
           id="email"
-          name="email"
-            value={formData.email}
-            onChange={updateResume}
+          name="personal.email"
+          value={formData.personal.email}
+          onChange={updateResume}
           className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
           required
         />
       </div>
 
       <div className="flex flex-col">
-        <label htmlFor="phone" className="mxtext-sm m-1 font-medium text-black">
+        <label htmlFor="phone" className="m-1 text-sm font-medium text-black">
           Phone Number
         </label>
         <input
           type="tel"
           id="phone"
-          name="phone"
-            value={formData.phone}
-            onChange={updateResume}
+          name="personal.phone"
+          value={formData.personal.phone}
+          onChange={updateResume}
           className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
         />
       </div>
+
       <div className="flex flex-col">
-        <label
-          htmlFor="location"
-          className="m-1 text-sm font-medium text-black"
-        >
+        <label htmlFor="location" className="m-1 text-sm font-medium text-black">
           Location
         </label>
         <input
           type="text"
           id="location"
-          name="location"
-            value={formData.location}
-            onChange={updateResume}
+          name="personal.location"
+          value={formData.personal.location}
+          onChange={updateResume}
           className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
-          
+          required
         />
-      </div>
-      <div>
-        {/* <button */}
-        {/* type="submit" */}
-        {/* className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" */}
-        {/* > */}
-        {/* Submit */}
-        {/* </button> */}
       </div>
     </form>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { EnvelopeClosedIcon,DrawingPinFilledIcon } from "@radix-ui/react-icons";
+import { EnvelopeClosedIcon, DrawingPinFilledIcon } from "@radix-ui/react-icons";
 
 export const Resume = ({ formData }) => {
   return (
@@ -7,18 +7,18 @@ export const Resume = ({ formData }) => {
       {/* Personal Details Section */}
       <section className="mb-6 w-full rounded-lg bg-blue-400 py-8 text-center shadow-md">
         <h2 className="mb-2 text-2xl font-bold text-white">
-          {formData.firstName}
+          {formData.personal.firstName}
         </h2>
         <div className="flex justify-around text-white">
           <div className="flex items-center">
             <EnvelopeClosedIcon className="mr-2" />
-            <div>{formData.email}</div>
+            <div>{formData.personal.email}</div>
           </div>
-          <div>{formData.phone}</div>
+          <div>{formData.personal.phone}</div>
           <div>
             <div className="flex items-center">
               <DrawingPinFilledIcon className="mr-2"></DrawingPinFilledIcon>
-              <div>{formData.location}</div>
+              <div>{formData.personal.location}</div>
             </div>
           </div>
         </div>
@@ -31,12 +31,16 @@ export const Resume = ({ formData }) => {
         </h2>
         <div className="flex justify-center">
           <div className="w-2/3 p-2 text-left">
-            <p>
-              <strong>University:</strong> XYZ University
-            </p>
-            <p>
-              <strong>Degree:</strong> Bachelor of Science in Computer Science
-            </p>
+            <div className="flex">
+              <strong>University:</strong> 
+              <div className="ml-2">{formData.education.university}</div>
+            </div>
+            <div className="flex">
+              <strong>Degree:</strong> 
+              <div className="ml-2">{formData.education.degree}</div>
+            </div>
+            
+            
           </div>
           <div className="w-1/3 p-2 text-right">
             <div>From Date - To Date</div>
