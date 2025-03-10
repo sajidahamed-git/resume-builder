@@ -43,7 +43,11 @@ export const Resume = ({ formData }) => {
             
           </div>
           <div className="w-1/3 p-2 text-right">
-            <div>From Date - To Date</div>
+            <div>
+              
+              <div>{formData.education.startDate}</div>
+              <div>{formData.education.endDate}</div>
+            </div>
             <div>Location</div>
           </div>
         </div>
