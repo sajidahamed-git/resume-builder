@@ -36,13 +36,11 @@ export const Resume = ({ formData }) => {
         </h2>
         <div className="flex justify-center">
           <div className="w-2/3 p-2 text-left">
-            <div className="flex">
-              <strong>University:</strong>
-              <div className="ml-2">{formData.education.university}</div>
+            <div className="flex gap-2">
+              <strong>University:</strong>{formData.education.university}
             </div>
-            <div className="flex">
-              <strong>Degree:</strong>
-              <div className="ml-2">{formData.education.degree}</div>
+            <div className="flex gap-2">
+              <strong>Degree:</strong>{formData.education.degree}
             </div>
           </div>
           <div className="w-1/3 p-2 text-right">
@@ -51,9 +49,7 @@ export const Resume = ({ formData }) => {
                 <strong>Duration:</strong> {formatDate(formData.education.startDate)} - {formatDate(formData.education.endDate)}
               </div>
             </div>
-            <div>
               <strong>Location:</strong> {formData.education.location}
-            </div>
           </div>
         </div>
       </section>
@@ -65,22 +61,23 @@ export const Resume = ({ formData }) => {
         </h2>
         <div className="flex justify-center">
           <div className="w-2/3 p-2 text-left">
-            <p>
-              <strong>Company:</strong> ABC Corp
-            </p>
-            <p>
-              <strong>Position:</strong> Software Developer
-            </p>
+            <div className="flex gap-2">
+              <strong>Company:</strong>{formData.experience.company}
+            </div>
+            <div className="flex gap-2">
+              <strong>Position:</strong>{formData.experience.position}
+            </div>
           </div>
           <div className="w-1/3 p-2 text-right">
-            <p>
-              <strong>Duration:</strong> {formatDate('2023-01-01')} - {formatDate('2025-02-26')}
-            </p>
-            <p>
-              <strong>Location:</strong> City, Country
-            </p>
+            <div className="flex flex-col items-end">
+              <div>
+                <strong>Duration:</strong> {formatDate(formData.experience.startDate)} - {formatDate(formData.experience.endDate)}
+              </div>
+            </div>
+              <strong>Location:</strong> {formData.experience.location}
           </div>
         </div>
+
       </section>
     </div>
   );

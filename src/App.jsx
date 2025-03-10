@@ -11,6 +11,13 @@ const initialValue = {
     endDate: "",
     location: "",
   },
+  experience: {
+    company: "",
+    position: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+  },
 };
 
 export default function App() {
