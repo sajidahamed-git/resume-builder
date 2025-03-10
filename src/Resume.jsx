@@ -50,7 +50,9 @@ export const Resume = ({ formData }) => {
               <div>
                 <strong>Duration:</strong> {formatDate(formData.education.startDate)} - {formatDate(formData.education.endDate)}
               </div>
-              <div>{formData.education.location}</div>
+            </div>
+            <div>
+              <strong>Location:</strong> {formData.education.location}
             </div>
           </div>
         </div>

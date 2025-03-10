@@ -4,7 +4,13 @@ import React, { useState } from "react";
 
 const initialValue = {
   personal: { firstName: "", email: "", phone: "", location: "" },
-  education: { university: "", degree: "", startDate: "", endDate: "" },
+  education: {
+    university: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+  },
 };
 
 export default function App() {

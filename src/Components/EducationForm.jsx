@@ -77,13 +77,15 @@ function EducationForm({ formData, updateResume }) {
       </div>
       <div className="flex flex-col">
         <label htmlFor="phone" className="m-1 text-sm font-medium text-black">
-        Location
+        Locationn
         </label>
         <input
           type="tel"
-          id="phone"
-          name="phone"
+          id="location"
+          name="education.location"
           //   value={formData.phone}
+              value={formData.education.location}
+              onChange={updateResume}
           //   onChange={handleChange}
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
         />
