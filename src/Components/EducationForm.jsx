@@ -45,7 +45,7 @@ function EducationForm({ formData, updateResume }) {
               Start Date
             </label>
             <input
-              type=""
+              type="date"
               id="StartDate"
               name="education.startDate"
               value={formData.education.startDate}
@@ -62,7 +62,7 @@ function EducationForm({ formData, updateResume }) {
               End Date
             </label>
             <input
-              type=""
+              type="date"
               id="date"
               name="education.endDate"
               value={formData.education.endDate}
