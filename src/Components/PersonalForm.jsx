@@ -2,9 +2,9 @@ import React from "react";
 
 function PersonalForm({ formData, updateResume }) {
   return (
-    <form className="flex flex-col">
+    <form className="flex flex-col gap-4 p-4 bg-white rounded-lg shadow-md">
       <div className="flex flex-col">
-        <label htmlFor="firstName" className="m-1 text-sm font-medium text-black">
+        <label htmlFor="firstName" className="m-1 text-sm font-medium text-gray-700">
           Full Name
         </label>
         <input
@@ -13,13 +13,13 @@ function PersonalForm({ formData, updateResume }) {
           name="personal.firstName"
           value={formData.personal.firstName}
           onChange={updateResume}
-          className="m-1 p-2 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          className="m-1 p-2 h-10 rounded-md border-2 border-gray-300 transition-all duration-200 focus:rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
 
       <div className="flex flex-col">
-        <label htmlFor="email" className="m-1 text-sm font-medium text-black">
+        <label htmlFor="email" className="m-1 text-sm font-medium text-gray-700">
           Email
         </label>
         <input
@@ -28,13 +28,13 @@ function PersonalForm({ formData, updateResume }) {
           name="personal.email"
           value={formData.personal.email}
           onChange={updateResume}
-          className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          className="m-1 p-2 h-10 rounded-md border-2 border-gray-300 transition-all duration-200 focus:rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
 
       <div className="flex flex-col">
-        <label htmlFor="phone" className="m-1 text-sm font-medium text-black">
+        <label htmlFor="phone" className="m-1 text-sm font-medium text-gray-700">
           Phone Number
         </label>
         <input
@@ -43,12 +43,12 @@ function PersonalForm({ formData, updateResume }) {
           name="personal.phone"
           value={formData.personal.phone}
           onChange={updateResume}
-          className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          className="m-1 p-2 h-10 rounded-md border-2 border-gray-300 transition-all duration-200 focus:rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <div className="flex flex-col">
-        <label htmlFor="location" className="m-1 text-sm font-medium text-black">
+        <label htmlFor="location" className="m-1 text-sm font-medium text-gray-700">
           Location
         </label>
         <input
@@ -57,7 +57,7 @@ function PersonalForm({ formData, updateResume }) {
           name="personal.location"
           value={formData.personal.location}
           onChange={updateResume}
-          className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          className="m-1 p-2 h-10 rounded-md border-2 border-gray-300 transition-all duration-200 focus:rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>

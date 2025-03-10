@@ -38,12 +38,11 @@ export default function App() {
   };
 
   return (
-    //add bg gray 950 for the below div for darkmode
-    <div className="flex h-screen w-full">
-      <div className="w-1/3 border-2 p-4">
+    <div className="flex h-screen w-full bg-gray-50">
+      <div className="w-1/3 border-r-2 p-6">
         <Form formData={formData} updateResume={updateResume} />
       </div>
-      <div className="w-2/3 border-2">
+      <div className="w-2/3 p-6">
         <Resume formData={formData} />
       </div>
     </div>
