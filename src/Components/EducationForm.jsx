@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 function EducationForm() {
   const educationDetails = [];
   const saveEducation = () => {
     const educationObject = {
       university: document.getElementById("university").value.trim(),
-      degree: document.getElementById('degree').value.trim(),
-      startDate: document.getElementById('startDate').value.trim(),
-      endDate: document.getElementById('endDate').value.trim(),
-      location: document.getElementById('location').value.trim(),
+      degree: document.getElementById("degree").value.trim(),
+      startDate: document.getElementById("startDate").value.trim(),
+      endDate: document.getElementById("endDate").value.trim(),
+      location: document.getElementById("location").value.trim(),
     };
 
     document.getElementById("university").value = "";
@@ -17,14 +18,23 @@ function EducationForm() {
     document.getElementById("endDate").value = "";
     document.getElementById("location").value = "";
 
-    educationDetails.push(educationObject)
-    console.log(educationDetails)
+    educationDetails.push(educationObject);
+    console.log(educationDetails);
   };
-  const temp = true
+  const [state, setState] = useState(false); //false - dont show the form
+  // const temp = true
+  // function handleClick() {
+  // setState(false)
+  // }
 
-  if (temp) {
-    return <Button>+ Add</Button>
+  if (!state) {
+    return (
+      <Button variant="outline" onClick={() => setState(true)}>
+        + Add
+      </Button>
+    );
   }
+  //if state set to true display the below from
   return (
     <form className="flex flex-col">
       <div className="flex flex-col">
@@ -103,14 +113,19 @@ function EducationForm() {
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
         />
       </div>
-      <div className="text-center mt-2 ">
-        <Button type = 'button' variant="outline" onClick={() => saveEducation()}>
+      <div className="mt-2 text-center">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => {
+            saveEducation();
+            setState(false);
+          }}
+        >
           Save
         </Button>
       </div>
     </form>
   );
-  
-  
 }
 export default EducationForm;
