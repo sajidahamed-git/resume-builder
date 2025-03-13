@@ -98,9 +98,9 @@ function EducationForm() {
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
         />
       </div>
-      <div className="text-center">
+      <div className="text-center mt-2 ">
         <Button type = 'button' variant="outline" onClick={() => saveEducation()}>
-          + Add
+          Save
         </Button>
       </div>
     </form>
