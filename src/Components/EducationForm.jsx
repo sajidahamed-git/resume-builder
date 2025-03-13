@@ -1,4 +1,25 @@
-function EducationForm({ formData, updateResume }) {
+import { Button } from "@/components/ui/button";
+
+function EducationForm() {
+  const educationDetails = [];
+  const saveEducation = () => {
+    const educationObject = {
+      university: document.getElementById("university").value.trim(),
+      degree: document.getElementById('degree').value.trim(),
+      startDate: document.getElementById('startDate').value.trim(),
+      endDate: document.getElementById('endDate').value.trim(),
+      location: document.getElementById('location').value.trim(),
+    };
+
+    document.getElementById("university").value = "";
+    document.getElementById("degree").value = "";
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
+    document.getElementById("location").value = "";
+
+    educationDetails.push(educationObject)
+    console.log(educationDetails)
+  };
   return (
     <form className="flex flex-col">
       <div className="flex flex-col">
@@ -6,15 +27,14 @@ function EducationForm({ formData, updateResume }) {
           htmlFor="firstName"
           className="m-1 text-sm font-medium text-black"
         >
-        University
+          University
         </label>
         <input
           type="text"
           id="university"
           name="education.university"
-          value={formData.education.firstName}
-          onChange={updateResume}
-          className="m-1 p-2 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          // onChange={console.log(educationDetails)}
+          className="m-1 h-8 rounded-sm border-2 border-gray-600 p-2 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
           required
         />
       </div>
@@ -29,15 +49,13 @@ function EducationForm({ formData, updateResume }) {
           type="text"
           id="degree"
           name="education.degree"
-          value={formData.education.degree}
-          onChange={updateResume}
-          className="m-1 p-2 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+          className="m-1 h-8 rounded-sm border-2 border-gray-600 p-2 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
           required
         />
       </div>
       <div className="flex flex-col">
         <div className="flex justify-start">
-          <div className="flex flex-col w-1/2">
+          <div className="flex w-1/2 flex-col">
             <label
               htmlFor="email"
               className="m-1 text-sm font-medium text-black"
@@ -46,15 +64,13 @@ function EducationForm({ formData, updateResume }) {
             </label>
             <input
               type="date"
-              id="StartDate"
+              id="startDate"
               name="education.startDate"
-              value={formData.education.startDate}
-              onChange={updateResume}
-              className="m-1 p-2 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+              className="m-1 h-8 rounded-sm border-2 border-gray-600 p-2 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
               required
             />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex w-1/2 flex-col">
             <label
               htmlFor="email"
               className="m-1 ml-2 text-sm font-medium text-black"
@@ -63,13 +79,9 @@ function EducationForm({ formData, updateResume }) {
             </label>
             <input
               type="date"
-              id="date"
+              id="endDate"
               name="education.endDate"
-              value={formData.education.endDate}
-              onChange={updateResume}
-              //   value={formData.email}
-              //   onChange={handleChange}
-              className="m-1 h-8 p-2 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
+              className="m-1 h-8 rounded-sm border-2 border-gray-600 p-2 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
               required
             />
           </div>
@@ -77,26 +89,19 @@ function EducationForm({ formData, updateResume }) {
       </div>
       <div className="flex flex-col">
         <label htmlFor="phone" className="m-1 text-sm font-medium text-black">
-        Locationn
+          Locationn
         </label>
         <input
           type="tel"
           id="location"
           name="education.location"
-          //   value={formData.phone}
-              value={formData.education.location}
-              onChange={updateResume}
-          //   onChange={handleChange}
           className="m-1 h-8 rounded-sm border-2 border-gray-600 transition-all duration-200 focus:rounded-md focus:border-black focus:ring-2 focus:ring-black"
         />
       </div>
       <div className="text-center">
-        {/* <button
-          type="submit"
-          className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none"
-        >
-          + Add Education
-        </button> */}
+        <Button type = 'button' variant="outline" onClick={() => saveEducation()}>
+          + Add
+        </Button>
       </div>
     </form>
   );
