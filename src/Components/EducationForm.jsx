@@ -20,6 +20,11 @@ function EducationForm() {
     educationDetails.push(educationObject)
     console.log(educationDetails)
   };
+  const temp = true
+
+  if (temp) {
+    return <Button>+ Add</Button>
+  }
   return (
     <form className="flex flex-col">
       <div className="flex flex-col">
@@ -105,5 +110,7 @@ function EducationForm() {
       </div>
     </form>
   );
+  
+  
 }
 export default EducationForm;
