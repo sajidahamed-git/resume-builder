@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import EducationEntryInput from "./Education/EducationEntryInput";
-
+//education object is losing its previous entry
 function EducationSection() {
   const educationDetails = [];
   const saveEducation = () => {
@@ -18,6 +18,10 @@ function EducationSection() {
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
     document.getElementById("location").value = "";
+    if (!educationObject.university || !educationObject.degree || !educationObject.startDate || !educationObject.endDate) {
+      alert("Please fill in all required fields (University, Degree, Start Date, End Date).");
+      return;
+    }
 
     educationDetails.push(educationObject);
     console.log(educationDetails);
@@ -25,6 +29,9 @@ function EducationSection() {
   const [showForm,setShowForm] = useState(false); //false - dont show the form
 
   if (!showForm) {
+    if(educationDetails.length>0){
+      return (<div>Display details here</div>)
+    }
     return (
       <Button variant="outline" onClick={() =>setShowForm(true)}>
         + Add
@@ -34,7 +41,7 @@ function EducationSection() {
   //if state set to true display the below from
   return (
     //I want to share the showForm state with the below component
-    <EducationEntryInput  showForm={showForm} setShowForm = {setShowForm} saveEducation = {saveEducation}/>
+    <EducationEntryInput setShowForm = {setShowForm} saveEducation = {saveEducation}/>
   );
 }
 export default EducationSection;
