@@ -6,7 +6,7 @@ import {
 } from "@/Components/ui/accordion";
 import { FormHeading } from "./Components/FormHeading";
 import PersonalForm from "./Components/PersonalForm";
-import EducationForm from "./Components/EducationForm";
+import EducationForm from "./Components/EducationSection";
 import ExperienceForm from "./Components/ExperienceForm";
 function Form({formData,updateResume}) {
   return (
