@@ -34,7 +34,7 @@ function EducationSection() {
   const [showForm, setShowForm] = useState(false); //false - dont show the form
   const [educationDetails, setEducationDetails] = useState([]);
 
-  const handleSaveEducation = (educationObject) => {
+  const savetoArray = (educationObject) => {
     educationDetails.push(educationObject);
     setEducationDetails(educationDetails);
     console.log(educationDetails);
@@ -91,7 +91,7 @@ function EducationSection() {
   //if state set to true display the below from
   return (
     //I want to share the showForm state with the below component
-    <EducationEntryInput setShowForm={setShowForm} save={handleSaveEducation} />
+    <EducationEntryInput setShowForm={setShowForm} savetoArray={savetoArray} />
   );
 }
 export default EducationSection;

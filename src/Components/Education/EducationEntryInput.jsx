@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 
-function EducationEntryInput({setShowForm,save}) {
+function EducationEntryInput({setShowForm,savetoArray}) {
   const saveEducation = () => {
     const educationObject = {
       university: document.getElementById("university").value.trim(),
@@ -22,7 +22,8 @@ function EducationEntryInput({setShowForm,save}) {
       alert("Please fill in all required fields (University, Degree, Start Date, End Date).");
       return;
     }
-    save(educationObject)
+    savetoArray(educationObject)
+    
 
   };
     return (
