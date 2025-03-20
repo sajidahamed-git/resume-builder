@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { Trash } from "lucide-react";
 import { useState } from "react";
 import EducationEntryInput from "./EducationEntryInput";
 //education object is losing its previous entry
 const formatDate = (dateString) => {
-  const options = { year: 'numeric', month: 'short' };
+  const options = { year: "numeric", month: "short" };
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
 function EducationSection() {
@@ -42,7 +43,7 @@ function EducationSection() {
   const educationList = educationDetails.map((details, index) => (
     <div
       key={index}
-      className="flex justify-between items-center p-4 mb-2 bg-gray-100 rounded-lg shadow-md"
+      className="mb-2 flex items-center justify-between rounded-lg bg-gray-100 p-4 shadow-md"
     >
       <div>
         <div className="font-semibold">{details.university}</div>
@@ -52,10 +53,10 @@ function EducationSection() {
       </div>
       <Button
         variant="outline"
-        className="text-sm"
+        className="text-sm hover:bg-red-400 hover:cursor-pointer"
         onClick={() => console.log(`Edit entry for ${details.university}`)}
       >
-       Remove
+        <Trash />
       </Button>
     </div>
   ));
@@ -65,7 +66,7 @@ function EducationSection() {
       return (
         <div>
           <div>{educationList}</div>
-          <Button variant="outline" onClick={() => setShowForm(true)}>
+          <Button className='hover:cursor-pointer hover:bg-gray-100' variant="outline" onClick={() => setShowForm(true)}>
             + Add
           </Button>
         </div>

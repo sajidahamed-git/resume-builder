@@ -105,6 +105,7 @@ function EducationEntryInput({setShowForm,save}) {
         </div>
         <div className="mt-2 text-center">
           <Button
+            className='hover:cursor-pointer hover:bg-green-200'
             type="button"
             variant="outline"
             onClick={() => {
