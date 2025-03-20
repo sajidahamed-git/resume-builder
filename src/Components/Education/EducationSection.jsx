@@ -39,10 +39,16 @@ function EducationSection() {
     setEducationDetails(educationDetails);
     console.log(educationDetails);
   };
-
-  const educationList = educationDetails.map((details, index) => (
+  const handleRemoveEducation = (university) => {
+    const updatedDetails = educationDetails.filter(
+      (details) => details.university !== university,
+    );
+    setEducationDetails(updatedDetails); // Update the state with the filtered array
+    console.log(updatedDetails);
+  };
+  const educationList = educationDetails.map((details) => (
     <div
-      key={index}
+      key={details.university} //not recommended but okay for now
       className="mb-2 flex items-center justify-between rounded-lg bg-gray-100 p-4 shadow-md"
     >
       <div>
@@ -53,8 +59,8 @@ function EducationSection() {
       </div>
       <Button
         variant="outline"
-        className="text-sm hover:bg-red-400 hover:cursor-pointer"
-        onClick={() => console.log(`Edit entry for ${details.university}`)}
+        className="text-sm hover:cursor-pointer hover:bg-red-400"
+        onClick={() => handleRemoveEducation(details.university)}
       >
         <Trash />
       </Button>
@@ -66,7 +72,11 @@ function EducationSection() {
       return (
         <div>
           <div>{educationList}</div>
-          <Button className='hover:cursor-pointer hover:bg-gray-100' variant="outline" onClick={() => setShowForm(true)}>
+          <Button
+            className="hover:cursor-pointer hover:bg-gray-100"
+            variant="outline"
+            onClick={() => setShowForm(true)}
+          >
             + Add
           </Button>
         </div>
