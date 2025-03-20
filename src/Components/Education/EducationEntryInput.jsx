@@ -1,7 +1,30 @@
 import { Button } from "@/components/ui/button";
 
 
-function EducationEntryInput({setShowForm, saveEducation}) {
+function EducationEntryInput({setShowForm,save}) {
+  const saveEducation = () => {
+    const educationObject = {
+      university: document.getElementById("university").value.trim(),
+      degree: document.getElementById("degree").value.trim(),
+      startDate: document.getElementById("startDate").value.trim(),
+      endDate: document.getElementById("endDate").value.trim(),
+      location: document.getElementById("location").value.trim(),
+    };
+
+    document.getElementById("university").value = "";
+    document.getElementById("degree").value = "";
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
+    document.getElementById("location").value = "";
+
+    
+    if (!educationObject.university) {
+      alert("Please fill in all required fields (University, Degree, Start Date, End Date).");
+      return;
+    }
+    save(educationObject)
+
+  };
     return (
         <form className="flex flex-col">
         <div className="flex flex-col">
