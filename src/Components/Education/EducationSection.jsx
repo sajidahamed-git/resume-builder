@@ -7,15 +7,12 @@ const formatDate = (dateString) => {
   const options = { year: "numeric", month: "short" };
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
-function EducationSection() {
+function EducationSection({educationDetails,setEducationDetails}) {
 
   const [showForm, setShowForm] = useState(false); //false - dont show the form
-  const [educationDetails, setEducationDetails] = useState([]);
 
   const savetoArray = (educationObject) => {
-    educationDetails.push(educationObject);
-    setEducationDetails(educationDetails);
-    console.log(educationDetails);
+    setEducationDetails([...educationDetails, educationObject]); // Create a new array
   };
   const handleRemoveEducation = (university) => {
     const updatedDetails = educationDetails.filter(

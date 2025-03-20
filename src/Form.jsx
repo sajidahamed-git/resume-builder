@@ -8,7 +8,12 @@ import { FormHeading } from "./Components/FormHeading";
 import PersonalForm from "./Components/PersonalForm";
 import EducationSection from "./Components/Education/EducationSection";
 import ExperienceForm from "./Components/ExperienceForm";
-function Form({formData,updateResume}) {
+function Form({
+  formData,
+  updateResume,
+  educationDetails,
+  setEducationDetails,
+}) {
   return (
     <div className="flex flex-col gap-6">
       <FormHeading></FormHeading>
@@ -24,21 +29,29 @@ function Form({formData,updateResume}) {
             Personal Information
           </AccordionTrigger>
           <AccordionContent>
-            <PersonalForm formData={formData} updateResume={updateResume}></PersonalForm>
+            <PersonalForm
+              formData={formData}
+              updateResume={updateResume}
+            ></PersonalForm>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value = 'item-2'>
-          <AccordionTrigger className={'text-xl'}>Education</AccordionTrigger>
+        <AccordionItem value="item-2">
+          <AccordionTrigger className={"text-xl"}>Education</AccordionTrigger>
           <AccordionContent>
-            <EducationSection ></EducationSection>
+            <EducationSection
+              educationDetails={educationDetails}
+              setEducationDetails={setEducationDetails}
+            ></EducationSection>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value = 'item-3'>
-          <AccordionTrigger className={'text-xl'}>Experience</AccordionTrigger>
+        <AccordionItem value="item-3">
+          <AccordionTrigger className={"text-xl"}>Experience</AccordionTrigger>
           <AccordionContent>
-            <ExperienceForm formData={formData} updateResume={updateResume}></ExperienceForm>
+            <ExperienceForm
+              formData={formData}
+              updateResume={updateResume}
+            ></ExperienceForm>
           </AccordionContent>
-
         </AccordionItem>
       </Accordion>
     </div>
