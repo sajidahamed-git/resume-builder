@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import EducationEntryInput from "./Education/EducationEntryInput";
+import EducationEntryInput from "./EducationEntryInput";
 //education object is losing its previous entry
+const formatDate = (dateString) => {
+  const options = { year: 'numeric', month: 'short' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+};
 function EducationSection() {
   // const educationDetails = [];
   // const saveEducation = () => {
@@ -35,9 +39,27 @@ function EducationSection() {
     console.log(educationDetails);
   };
 
-  const educationList = educationDetails.map((details) => (
-    <div>{details.university}</div>
+  const educationList = educationDetails.map((details, index) => (
+    <div
+      key={index}
+      className="flex justify-between items-center p-4 mb-2 bg-gray-100 rounded-lg shadow-md"
+    >
+      <div>
+        <div className="font-semibold">{details.university}</div>
+        <div className="text-sm text-gray-600">
+          {formatDate(details.startDate)} - {formatDate(details.endDate)}
+        </div>
+      </div>
+      <Button
+        variant="outline"
+        className="text-sm"
+        onClick={() => console.log(`Edit entry for ${details.university}`)}
+      >
+       Remove
+      </Button>
+    </div>
   ));
+
   if (!showForm) {
     if (educationDetails.length > 0) {
       return (
