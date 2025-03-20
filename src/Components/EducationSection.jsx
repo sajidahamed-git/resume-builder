@@ -34,8 +34,10 @@ function EducationSection() {
     setEducationDetails(educationDetails);
     console.log(educationDetails);
   };
-  
-  const educationList = educationDetails.map(details => <li>{details.university}</li>)
+
+  const educationList = educationDetails.map((details) => (
+    <div>{details.university}</div>
+  ));
   if (!showForm) {
     if (educationDetails.length > 0) {
       return (
