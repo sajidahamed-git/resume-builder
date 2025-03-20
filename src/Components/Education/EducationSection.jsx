@@ -8,29 +8,7 @@ const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
 function EducationSection() {
-  // const educationDetails = [];
-  // const saveEducation = () => {
-  //   const educationObject = {
-  //     university: document.getElementById("university").value.trim(),
-  //     degree: document.getElementById("degree").value.trim(),
-  //     startDate: document.getElementById("startDate").value.trim(),
-  //     endDate: document.getElementById("endDate").value.trim(),
-  //     location: document.getElementById("location").value.trim(),
-  //   };
 
-  //   document.getElementById("university").value = "";
-  //   document.getElementById("degree").value = "";
-  //   document.getElementById("startDate").value = "";
-  //   document.getElementById("endDate").value = "";
-  //   document.getElementById("location").value = "";
-  //   if (!educationObject.university || !educationObject.degree || !educationObject.startDate || !educationObject.endDate) {
-  //     alert("Please fill in all required fields (University, Degree, Start Date, End Date).");
-  //     return;
-  //   }
-
-  //   educationDetails.push(educationObject);
-  //   console.log(educationDetails);
-  // };
   const [showForm, setShowForm] = useState(false); //false - dont show the form
   const [educationDetails, setEducationDetails] = useState([]);
 

@@ -6,7 +6,7 @@ import {
 } from "@/Components/ui/accordion";
 import { FormHeading } from "./Components/FormHeading";
 import PersonalForm from "./Components/PersonalForm";
-import EducationForm from "./Components/Education/EducationSection";
+import EducationSection from "./Components/Education/EducationSection";
 import ExperienceForm from "./Components/ExperienceForm";
 function Form({formData,updateResume}) {
   return (
@@ -30,7 +30,7 @@ function Form({formData,updateResume}) {
         <AccordionItem value = 'item-2'>
           <AccordionTrigger className={'text-xl'}>Education</AccordionTrigger>
           <AccordionContent>
-            <EducationForm formData={formData} updateResume={updateResume}></EducationForm>
+            <EducationSection ></EducationSection>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value = 'item-3'>
