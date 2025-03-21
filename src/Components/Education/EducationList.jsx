@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 import { Trash } from "lucide-react";
 import { useState } from "react";
 import EducationEntryInput from "./EducationFrom.jsx";
