@@ -9,7 +9,7 @@ export const Resume = ({ formData, educationDetails }) => {
     const options = { year: "numeric", month: "short" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
-  console.log(educationDetails, 'from resume')
+  // console.log(educationDetails, 'from resume')
   const educationResume = educationDetails.map((details) => (
     <div key={details.university}>
       <div className="flex justify-center">

@@ -1,33 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
 import { useState } from "react";
-import EducationEntryInput from "./EducationEntryInput";
-//education object is losing its previous entry
+import ExperienceForm from "./ExperienceForm.jsx";
+
 const formatDate = (dateString) => {
   const options = { year: "numeric", month: "short" };
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
-function EducationSection({educationDetails,setEducationDetails}) {
 
+function ExperienceList({ experienceDetails, setExperienceDetails }) {
   const [showForm, setShowForm] = useState(false); //false - dont show the form
 
-  const savetoArray = (educationObject) => {
-    setEducationDetails([...educationDetails, educationObject]); // Create a new array
+  const savetoArray = (experienceObject) => {
+    setExperienceDetails([...experienceDetails, experienceObject]); // Create a new array
   };
-  const handleRemoveEducation = (university) => {
-    const updatedDetails = educationDetails.filter(
-      (details) => details.university !== university,
+  const handleRemoveExperience = (company) => {
+    const updatedDetails = experienceDetails.filter(
+      (details) => details.company !== company,
     );
-    setEducationDetails(updatedDetails); // Update the state with the filtered array
-    console.log(updatedDetails);
+    setExperienceDetails(updatedDetails); // Update the state with the filtered array
   };
-  const educationList = educationDetails.map((details) => (
+  const educationList = experienceDetails.map((details) => (
     <div
-      key={details.university} //not recommended but okay for now
+      key={details.company} //not recommended but okay for now
       className="mb-2 flex items-center justify-between rounded-lg bg-gray-100 p-4 shadow-md"
     >
       <div>
-        <div className="font-semibold">{details.university}</div>
+        <div className="font-semibold">{details.company}</div>
         <div className="text-sm text-gray-600">
           {formatDate(details.startDate)} - {formatDate(details.endDate)}
         </div>
@@ -35,7 +34,7 @@ function EducationSection({educationDetails,setEducationDetails}) {
       <Button
         variant="outline"
         className="text-sm hover:cursor-pointer hover:bg-red-400"
-        onClick={() => handleRemoveEducation(details.university)}
+        onClick={() => handleRemoveExperience(details.company)}
       >
         <Trash />
       </Button>
@@ -43,7 +42,7 @@ function EducationSection({educationDetails,setEducationDetails}) {
   ));
 
   if (!showForm) {
-    if (educationDetails.length > 0) {
+    if (experienceDetails.length > 0) {
       return (
         <div>
           <div>{educationList}</div>
@@ -66,7 +65,7 @@ function EducationSection({educationDetails,setEducationDetails}) {
   //if state set to true display the below from
   return (
     //I want to share the showForm state with the below component
-    <EducationEntryInput setShowForm={setShowForm} savetoArray={savetoArray} />
+    <ExperienceForm setShowForm={setShowForm} savetoArray={savetoArray} />
   );
 }
-export default EducationSection;
+export default ExperienceList;

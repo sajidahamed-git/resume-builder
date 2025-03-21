@@ -23,7 +23,7 @@ const initialValue = {
 export default function App() {
   const [formData, setFormData] = useState(initialValue);
   const [educationDetails, setEducationDetails] = useState([]);
-
+  const [experienceDetails,setExperienceDetails]  = useState([])
   const updateResume = (e) => {
     const { name, value } = e.target;
     const [section, key] = name.split(".");
@@ -47,10 +47,13 @@ export default function App() {
           updateResume={updateResume}
           educationDetails={educationDetails}
           setEducationDetails={setEducationDetails}
+          
+          experienceDetails = {experienceDetails}
+          setExperienceDetails = {setExperienceDetails}
         />
       </div>
       <div className="w-2/3 border-2">
-        <Resume formData={formData} educationDetails={educationDetails} />
+        <Resume formData={formData} educationDetails={educationDetails} experienceDetails = {experienceDetails} />
       </div>
     </div>
   );

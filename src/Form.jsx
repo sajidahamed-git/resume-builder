@@ -6,13 +6,16 @@ import {
 } from "@/Components/ui/accordion";
 import { FormHeading } from "./Components/FormHeading";
 import PersonalForm from "./Components/PersonalForm";
-import EducationSection from "./Components/Education/EducationSection";
-import ExperienceForm from "./Components/ExperienceForm";
+import EducationList from "./Components/Education/EducationList";
+// import ExperienceForm from "./Components/Experience/ExperienceForm";
+import ExperienceList from "./Components/Experience/ExperienceList";
 function Form({
   formData,
   updateResume,
   educationDetails,
   setEducationDetails,
+  experienceDetails,
+  setExperienceDetails,
 }) {
   return (
     <div className="flex flex-col gap-6">
@@ -38,19 +41,19 @@ function Form({
         <AccordionItem value="item-2">
           <AccordionTrigger className={"text-xl"}>Education</AccordionTrigger>
           <AccordionContent>
-            <EducationSection
+            <EducationList
               educationDetails={educationDetails}
               setEducationDetails={setEducationDetails}
-            ></EducationSection>
+            ></EducationList>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger className={"text-xl"}>Experience</AccordionTrigger>
           <AccordionContent>
-            <ExperienceForm
-              formData={formData}
-              updateResume={updateResume}
-            ></ExperienceForm>
+            <ExperienceList
+              experienceDetails={experienceDetails}
+              setExperienceDetails={setExperienceDetails}
+            ></ExperienceList>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
