@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/Components/ui/accordion";
 import { FormHeading } from "./Components/FormHeading";
-import PersonalForm from "./Components/PersonalForm";
+import PersonalForm from "./Components/Personal/PersonalForm";
 import EducationList from "./Components/Education/EducationList";
 // import ExperienceForm from "./Components/Experience/ExperienceForm";
 import ExperienceList from "./Components/Experience/ExperienceList";

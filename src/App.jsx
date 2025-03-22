@@ -3,27 +3,13 @@ import { Resume } from "./Resume";
 import React, { useState } from "react";
 
 const initialValue = {
-  personal: { firstName: "", email: "", phone: "", location: "" },
-  education: {
-    university: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-    location: "",
-  },
-  experience: {
-    company: "",
-    position: "",
-    startDate: "",
-    endDate: "",
-    location: "",
-  },
+  personal: { firstName: "King James", email: "james@royalmail.com", phone: "000-001", location: "London" },
 };
 
 export default function App() {
   const [formData, setFormData] = useState(initialValue);
   const [educationDetails, setEducationDetails] = useState([]);
-  const [experienceDetails,setExperienceDetails]  = useState([])
+  const [experienceDetails, setExperienceDetails] = useState([]);
   const updateResume = (e) => {
     const { name, value } = e.target;
     const [section, key] = name.split(".");
@@ -47,13 +33,16 @@ export default function App() {
           updateResume={updateResume}
           educationDetails={educationDetails}
           setEducationDetails={setEducationDetails}
-          
-          experienceDetails = {experienceDetails}
-          setExperienceDetails = {setExperienceDetails}
+          experienceDetails={experienceDetails}
+          setExperienceDetails={setExperienceDetails}
         />
       </div>
       <div className="w-2/3 border-2">
-        <Resume formData={formData} educationDetails={educationDetails} experienceDetails = {experienceDetails} />
+        <Resume
+          formData={formData}
+          educationDetails={educationDetails}
+          experienceDetails={experienceDetails}
+        />
       </div>
     </div>
   );
