@@ -3,13 +3,34 @@ import { Resume } from "./Resume";
 import React, { useState } from "react";
 
 const initialValue = {
-  personal: { firstName: "King James", email: "james@royalmail.com", phone: "000-001", location: "London" },
+  personal: {
+    firstName: "James Charles Stuart",
+    email: "king.james@royalcourt.uk",
+    phone: "+44 1603 1625",
+    location: "Palace of Whitehall, London",
+  },
 };
 
 export default function App() {
   const [formData, setFormData] = useState(initialValue);
-  const [educationDetails, setEducationDetails] = useState([]);
-  const [experienceDetails, setExperienceDetails] = useState([]);
+  const [educationDetails, setEducationDetails] = useState([
+    {
+      university: "University of Edinburgh",
+      degree: "Philosophiæ Doctor (Honorary)",
+      startDate: "01-01-1570",
+      endDate: "01-01-1574",
+      location: "Edinburgh, Scotland",
+    },
+  ]);
+  const [experienceDetails, setExperienceDetails] = useState([
+    {
+      company: "Kingdom of England & Scotland",
+      position: "Monarch & Supreme Governor",
+      startDate: "03-24-1603",
+      endDate: "03-27-1625",
+      location: "London, England",
+    },
+  ]);
   const updateResume = (e) => {
     const { name, value } = e.target;
     const [section, key] = name.split(".");
